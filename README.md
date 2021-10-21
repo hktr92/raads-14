@@ -8,3 +8,7 @@ open the `mod.ts` file and start hacking.
 
 ## live demo
 see this: https://raads-14.deno.dev/
+
+## references
+raads-14 screen: https://www.sussexpartnership.nhs.uk/node/7053/attachment.pdf
+more about autism: https://www.dpt.nhs.uk/our-services/adult-autism-and-adhd/what-is-autism
