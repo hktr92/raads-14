@@ -1,7 +1,19 @@
 /** @jsx h */
 import { h } from "../deps.ts";
+import { IQuestion } from "./component/IQuestion.ts";
+import { Question } from "./component/Question.tsx";
 
 const App = () => {
+  const questions: IQuestion[] = [
+    { title: "question 1", options: [3, 2, 1, 0] },
+    { title: "question 2", options: [3, 2, 1, 0] },
+    { title: "question 3", options: [3, 2, 1, 0] },
+  ];
+
+  const test = (option: number): void => {
+    console.debug(option);
+  };
+
   return (
     <html>
       <head>
@@ -16,32 +28,11 @@ const App = () => {
       </head>
       <body>
         <div class="container mx-auto">
-          <div class="flex">
-            <div class="flex-1">
-              question 1
-            </div>
-            <div class="flex-1">
-              <div class="grid grid-cols-4 gap-4">
-                <input type="checkbox" />
-                <input type="checkbox" />
-                <input type="checkbox" />
-                <input type="checkbox" />
-              </div>
-            </div>
-          </div>
-          <div class="flex">
-            <div class="flex-1">
-              question 2
-            </div>
-            <div class="flex-1">
-              <div class="grid grid-cols-4 gap-4">
-                <input type="checkbox" />
-                <input type="checkbox" />
-                <input type="checkbox" />
-                <input type="checkbox" />
-              </div>
-            </div>
-          </div>
+          {questions.map((q) => <Question onClick={(e: Event, option: number) => {
+              e.preventDefault()
+
+              test(option)
+          }} question={q} />)}
         </div>
       </body>
     </html>
